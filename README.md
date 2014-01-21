@@ -1,4 +1,4 @@
-TipsBoard
+Tips Board
 =========
 
 just fun tips!
