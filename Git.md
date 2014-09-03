@@ -3,7 +3,7 @@
 
 #### [Show git branch on terminal](http://blog.tinucleatus.com/?p=275)
 1. .bashrc 혹은 .bash_profile에 아래 정보 추가
-2. `export PS1="\[\033[00m\]\u@\h\[\033[00m\]:\[\033[00m\]\w\[\033[00m\] \``ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\``\[\033[00m\]$\[\033[00m\] "`
+2. ``export PS1="\[\033[00m\]\u@\h\[\033[00m\]:\[\033[00m\]\w\[\033[00m\] \`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[00m\]$\[\033[00m\] "``
 
 #### [Show git tree on terminal](http://stackoverflow.com/questions/1064361/unable-to-show-a-git-tree-in-terminal)
 1. `$ git config --global alias.tree "log --graph --decorate --pretty=oneline --abbrev-commit --all"`
