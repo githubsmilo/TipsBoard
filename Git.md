@@ -17,24 +17,24 @@
 #### How to migrate from subversion to git
 1. git 유저를 생성
 2. git 정보가 저장될 repository 디렉토리 생성
-> `$ mkdir /data/git`
+  1. `$ mkdir /data/git`
 
 3. 서버측에 저장할 프로젝트를 subversion으로부터 가져옴 (revision 1000까지)
-> `$ cd ~/`
-> `$ git svn clone svn://path GIT_DIR -r1:1000`
+  1. `$ cd ~/`
+  2. `$ git svn clone svn://path GIT_DIR -r1:1000`
 
 4. public repository를 만들기 위한 설정
-> `$ cd ~/`
-> `$ git clone --bare GIT_DIR`
-> `$ touch GIT_DIR.git/git-daemon-export-ok`
+  1. `$ cd ~/`
+  2. `$ git clone --bare GIT_DIR`
+  3. `$ touch GIT_DIR.git/git-daemon-export-ok`
 
 5. GIT_DIR.git를 git repository로 이동
-> `$ sudo -u git cp -R GIT_DIR.git /data/git/GIT_DIR`
-> `$ cd /data/git/GIT_DIR`
-> `$ sudo git --bare update-server-info`
-> `$ sudo mv hooks/post-update.sample hooks/post-update`
+  1. `$ sudo -u git cp -R GIT_DIR.git /data/git/GIT_DIR`
+  2. `$ cd /data/git/GIT_DIR`
+  3. `$ sudo git --bare update-server-info`
+  4. `$ sudo mv hooks/post-update.sample hooks/post-update`
 
 6. 다른 컴퓨터에서 clone 명령을 수행하여 파일을 제대로 받아오는지 확인
-> `$ git clone git@192.168.1.1:/data/git/GIT_DIR DIR_NAME`
+  1. `$ git clone git@192.168.1.1:/data/git/GIT_DIR DIR_NAME`
 
 7. Git 개인 설정
