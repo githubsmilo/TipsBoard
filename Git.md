@@ -1,3 +1,7 @@
+#### [Reset local repository branch to be just like remote repository HEAD](http://stackoverflow.com/questions/1628088/reset-local-repository-branch-to-be-just-like-remote-repository-head)
+1. `$ git fetch origin`
+2. `$ git reset --hard origin/master`
+
 #### [Reset latest commit on git local repository](http://stackoverflow.com/questions/927358/undo-last-git-commit)
 1. `$ git reset --soft HEAD^`
 
